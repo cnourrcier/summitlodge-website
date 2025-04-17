@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import staycation from './assets/staycation.png';
 import './App.css';
 
 function App() {
@@ -85,7 +86,13 @@ function App() {
             <i className="fab fa-youtube"></i>
           </a>
         </div>
-        <button className="book-btn">Book it!</button>
+        <a 
+          href='https://bearadise.com/property/summit-lodge'
+          className="book-btn"
+          target='_blank'
+        >
+          Book it!
+        </a>
         <div className="address">
           Summit Lodge – Big Bear<br />
           42243 Evergreen Dr, Big Bear Lake, CA 92315
@@ -119,7 +126,12 @@ function App() {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <div className="footer-section">
+          <div className="footer-left">
+            <div className="footer-logo">
+              <img src={staycation} alt="Staycation TV" className="footer-staycation" />
+            </div>
+          </div>
+          <div className="footer-right">
             <div className="footer-social">
               <a 
                 href="https://facebook.com/SummitLodgeBigBear" 
@@ -143,12 +155,16 @@ function App() {
                 <i className="fab fa-youtube"></i>
               </a>
             </div>
-          </div>
-          <div className="footer-section">
-            <button className="footer-btn">Contact Us</button>
-            <button className="footer-btn book-btn">Book it!</button>
-          </div>
-          <div className="footer-section">
+            <div className="footer-buttons">
+              <button className="footer-btn">Contact Us</button>
+              <a 
+                href='https://bearadise.com/property/summit-lodge'
+                className="footer-btn book-btn"
+                target='_blank'
+              >
+                Book it!
+              </a>
+            </div>
             <div className="footer-address">
               Summit Lodge – Big Bear<br />
               42243 Evergreen Dr, Big Bear Lake, CA 92315
