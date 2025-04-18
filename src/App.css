@@ -114,6 +114,10 @@ button {
   transition: opacity 1s ease-in-out;
 }
 
+.slide:first-child {
+  background-position: left center;
+}
+
 .slide.active {
   opacity: 1;
 }
