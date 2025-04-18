@@ -226,7 +226,6 @@ button {
 
 .gallery-item {
   overflow: hidden;
-  /* border-radius: 4px; */
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   transition: transform 0.3s ease;
 }
@@ -270,7 +269,6 @@ button {
   height: auto;
   background-color: white;
   padding: 10px;
-  /* border-radius: 4px; */
 }
 
 .footer-right {
@@ -305,7 +303,6 @@ button {
   color: white;
   border: 1px solid white;
   padding: 1rem 1.8rem;
-  /* border-radius: 4px; */
   font-size: 1.1rem;
   transition: all 0.3s ease;
 }

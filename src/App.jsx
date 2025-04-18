@@ -1,7 +1,109 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import staycation from './assets/staycation.png';
+import About from './About';
 import './App.css';
 
+// Home 
+function Home({ currentSlide, sliderImages, galleryImages }) {
+  return (
+    <>
+      {/* Featured Banner */}
+      <div className="featured-banner">
+          Featured on Staycation TV
+      </div>
+      
+      {/* Image Slider */}
+      <div className="slider-container">
+        <div className="slider">
+          {sliderImages.map((image, index) => (
+            <div 
+              key={index} 
+              className={`slide ${index === currentSlide ? 'active' : ''}`}
+              style={{ backgroundImage: `url(${import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}/${image}/public)` }}
+            />
+          ))}
+        </div>
+        <div className="slider-overlay">
+          <div className='overlay-content'>
+            <div className='overlay-text'>
+              <p>A one of a kind luxury vacation</p>
+              <p>experience in Big Bear, CA</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      {/* Social Links Row */}
+      <div className="social-row">
+        <div className="social-links">
+          <a 
+            href="https://facebook.com/SummitLodgeBigBear"
+            className="social-link"
+            target='_blank'
+            rel="noreferrer"
+          >
+            <i className="fab fa-facebook-f"></i>
+          </a>
+          <a 
+            href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
+            className="social-link"
+            target='_blank'
+            rel="noreferrer"
+          >
+            <i className="fab fa-instagram"></i>
+          </a>
+          <a 
+            href="https://youtube.com" 
+            className="social-link"
+            target='_blank'
+            rel="noreferrer"
+          >
+            <i className="fab fa-youtube"></i>
+          </a>
+        </div>
+        <a 
+          href='https://bearadise.com/property/summit-lodge'
+          className="book-btn"
+          target='_blank'
+          rel="noreferrer"
+        >
+          Book it!
+        </a>
+        <div className="address">
+          Summit Lodge – Big Bear<br />
+          42243 Evergreen Dr, Big Bear Lake, CA 92315
+        </div>
+      </div>
+      
+      {/* YouTube Video */}
+      <div className="video-container">
+        <iframe 
+          width="100%" 
+          height="500" 
+          src="https://www.youtube.com/embed/your-video-id" 
+          title="Summit Lodge Big Bear"
+          frameBorder="0" 
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+          allowFullScreen
+        ></iframe>
+      </div>
+      
+      {/* Image Gallery */}
+      <div className="gallery-container">
+        <div className="gallery">
+          {galleryImages.map((image) => (
+            <div key={image.id} className="gallery-item">
+              <img src={`${import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}/${image.imageID}/public`} alt={image.alt} />
+            </div>
+          ))}
+        </div>
+      </div>
+    </>
+  );
+}
+
+// App
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   
@@ -13,7 +115,6 @@ function App() {
   ];
   
   // Images for the gallery
-  // const galleryImages = Array.from({ length: 9 }, (_, i) => `/gallery-image-${i + 1}.jpg`);
   const galleryImages = [
     { 
       id: 1,
@@ -99,159 +200,82 @@ function App() {
   }, [sliderImages.length]);
 
   return (
-    <div className="app">
-      {/* Navigation Bar */}
-      <nav className="navbar">
-        <div className="navbar-content">
-          <div className="navbar-brand">Summit Lodge Big Bear</div>
-          <div className="navbar-links">
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+    <Router>
+      <div className="app">
+        {/* Navigation Bar */}
+        <nav className="navbar">
+          <div className="navbar-content">
+            <Link to="/" className="navbar-brand">Summit Lodge Big Bear</Link>
+            <div className="navbar-links">
+              <Link to="/about">About</Link>
+              <a href="#contact">Contact</a>
+            </div>
           </div>
-        </div>
-      </nav>
+        </nav>
 
-      {/* Featured Banner */}
-      <div className="featured-banner">
-          Featured on Staycation TV
-      </div>
-      
-      {/* Image Slider */}
-      <div className="slider-container">
-        <div className="slider">
-          {sliderImages.map((image, index) => (
-            <div 
-              key={index} 
-              className={`slide ${index === currentSlide ? 'active' : ''}`}
-              style={{ backgroundImage: `url(${import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}/${image}/public)` }}
-            />
-          ))}
-        </div>
-        <div className="slider-overlay">
-          <div className='overlay-content'>
-            <div className='overlay-text'>
-              <p>A one of a kind luxury vacation</p>
-              <p>experience in Big Bear, CA</p>
+        <Routes>
+          <Route path="/" element={<Home currentSlide={currentSlide} sliderImages={sliderImages} galleryImages={galleryImages} />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
+        
+        {/* Footer */}
+        <footer className="footer">
+          <div className="footer-content">
+            <div className="footer-left">
+              <div className="footer-logo">
+                <img src={staycation} alt="Staycation TV" className="footer-staycation" />
+              </div>
+            </div>
+            <div className="footer-right">
+              <div className="footer-social">
+                <a 
+                  href="https://facebook.com/SummitLodgeBigBear" 
+                  className="footer-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a 
+                  href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
+                  className="footer-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  className="footer-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+              <div className="footer-buttons">
+                <button className="footer-btn">Contact Us</button>
+                <a 
+                  href='https://bearadise.com/property/summit-lodge'
+                  className="footer-btn book-btn"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  Book it!
+                </a>
+              </div>
+              <div className="footer-address">
+                Summit Lodge – Big Bear<br />
+                42243 Evergreen Dr, Big Bear Lake, CA 92315
+              </div>
+            </div>
+            <div className="footer-copyright">
+              &copy; {new Date().getFullYear()} Summit Lodge Big Bear
             </div>
           </div>
-        </div>
+        </footer>
       </div>
-      
-      {/* Social Links Row */}
-      <div className="social-row">
-        <div className="social-links">
-          <a 
-            href="https://facebook.com/SummitLodgeBigBear"
-            className="social-link"
-            target='_blank'
-          >
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a 
-            href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
-            className="social-link"
-            target='_blank'
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a 
-            href="https://youtube.com" 
-            className="social-link"
-            target='_blank'
-          >
-            <i className="fab fa-youtube"></i>
-          </a>
-        </div>
-        <a 
-          href='https://bearadise.com/property/summit-lodge'
-          className="book-btn"
-          target='_blank'
-        >
-          Book it!
-        </a>
-        <div className="address">
-          Summit Lodge – Big Bear<br />
-          42243 Evergreen Dr, Big Bear Lake, CA 92315
-        </div>
-      </div>
-      
-      {/* YouTube Video */}
-      <div className="video-container">
-        <iframe 
-          width="100%" 
-          height="500" 
-          src="https://www.youtube.com/embed/your-video-id" 
-          title="Summit Lodge Big Bear"
-          frameBorder="0" 
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-          allowFullScreen
-        ></iframe>
-      </div>
-      
-      {/* Image Gallery */}
-      <div className="gallery-container">
-        <div className="gallery">
-          {galleryImages.map((image, index) => (
-            <div key={index} className="gallery-item">
-              <img src={`${import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}/${image.imageID}/public`} alt={image.alt} />
-            </div>
-          ))}
-        </div>
-      </div>
-      
-      {/* Footer */}
-      <footer className="footer">
-        <div className="footer-content">
-          <div className="footer-left">
-            <div className="footer-logo">
-              <img src={staycation} alt="Staycation TV" className="footer-staycation" />
-            </div>
-          </div>
-          <div className="footer-right">
-            <div className="footer-social">
-              <a 
-                href="https://facebook.com/SummitLodgeBigBear" 
-                className="footer-social-link"
-                target='_blank'
-              >
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a 
-                href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
-                className="footer-social-link"
-                target='_blank'
-              >
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a 
-                href="https://youtube.com" 
-                className="footer-social-link"
-                target='_blank'
-              >
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div>
-            <div className="footer-buttons">
-              <button className="footer-btn">Contact Us</button>
-              <a 
-                href='https://bearadise.com/property/summit-lodge'
-                className="footer-btn book-btn"
-                target='_blank'
-              >
-                Book it!
-              </a>
-            </div>
-            <div className="footer-address">
-              Summit Lodge – Big Bear<br />
-              42243 Evergreen Dr, Big Bear Lake, CA 92315
-            </div>
-          </div>
-          <div className="footer-copyright">
-            &copy; {new Date().getFullYear()} Summit Lodge Big Bear
-          </div>
-        </div>
-      </footer>
-    </div>
+    </Router>
   );
 }
 
