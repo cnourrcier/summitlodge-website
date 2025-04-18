@@ -54,9 +54,11 @@ function App() {
           ))}
         </div>
         <div className="slider-overlay">
-          <div className='overlay-text'>
-            <p>A one of a kind luxury vacation</p>
-            <p>experience in Big Bear, CA</p>
+          <div className='overlay-content'>
+            <div className='overlay-text'>
+              <p>A one of a kind luxury vacation</p>
+              <p>experience in Big Bear, CA</p>
+            </div>
           </div>
         </div>
       </div>
