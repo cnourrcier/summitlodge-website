@@ -83,7 +83,7 @@ function About() {
 
             <div className="feature-card">
               <div className="feature-icon">
-                <i className="fas fa-gamepad"></i>
+                <i className="fas fa-dice"></i>
               </div>
               <h3>Game Room</h3>
               <p>Lofted upstairs game room with a handcrafted teak pool table and foosball</p>

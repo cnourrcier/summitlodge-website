@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import staycation from './assets/staycation.png';
 import About from './About';
+import Contact from './Contact';
 import './App.css';
 
 // Home 
@@ -206,9 +207,45 @@ function App() {
         <nav className="navbar">
           <div className="navbar-content">
             <Link to="/" className="navbar-brand">Summit Lodge Big Bear</Link>
+            <div className="navbar-actions">
+              <div className="navbar-social-links">
+                <a 
+                  href="https://facebook.com/SummitLodgeBigBear"
+                  className="navbar-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-facebook-f"></i>
+                </a>
+                <a 
+                  href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
+                  className="navbar-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-instagram"></i>
+                </a>
+                <a 
+                  href="https://youtube.com" 
+                  className="navbar-social-link"
+                  target='_blank'
+                  rel="noreferrer"
+                >
+                  <i className="fab fa-youtube"></i>
+                </a>
+              </div>
+              <a 
+                href='https://bearadise.com/property/summit-lodge'
+                className="navbar-book-btn"
+                target='_blank'
+                rel="noreferrer"
+              >
+                Book it!
+              </a>
+            </div>
             <div className="navbar-links">
               <Link to="/about">About</Link>
-              <a href="#contact">Contact</a>
+              <Link to="/contact">Contact</Link>
             </div>
           </div>
         </nav>
@@ -216,6 +253,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home currentSlide={currentSlide} sliderImages={sliderImages} galleryImages={galleryImages} />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
         </Routes>
         
         {/* Footer */}
@@ -254,7 +292,7 @@ function App() {
                 </a>
               </div>
               <div className="footer-buttons">
-                <button className="footer-btn">Contact Us</button>
+                <Link to="/contact" className="footer-btn">Contact Us</Link>
                 <a 
                   href='https://bearadise.com/property/summit-lodge'
                   className="footer-btn book-btn"

@@ -60,13 +60,47 @@ button {
   color: #3c5e47;
 }
 
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.navbar-social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.navbar-social-link {
+  font-size: 1.2rem;
+  color: #3c5e47;
+  transition: color 0.3s ease;
+}
+
+.navbar-social-link:hover {
+  color: #274032;
+}
+
+.navbar-book-btn {
+  background-color: #e5743b;
+  color: white;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease;
+}
+
+.navbar-book-btn:hover {
+  background-color: #d5642b;
+}
+
 .navbar-links {
   display: flex;
   gap: 1.5rem;
 }
 
 .navbar-links a {
-  font-size: 1rem;
+  font-size: 1.05rem;
   font-weight: 600;
   transition: color 0.3s ease;
 }
@@ -174,7 +208,7 @@ button {
 }
 
 .social-link {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #3c5e47;
   transition: color 0.3s ease;
 }
@@ -188,7 +222,6 @@ button {
   color: white;
   font-weight: 600;
   padding: 1rem 1.8rem;
-  /* border-radius: 4px; */
   font-size: 1.1rem;
   transition: background-color 0.3s ease;
 }
@@ -339,11 +372,26 @@ button {
 @media (max-width: 768px) {
   .navbar-content {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .navbar-actions {
+    /* flex-direction: column; */
+    gap: 1.5rem;
+    order: 2;
+  }
+
+  .navbar-social-links {
+    gap: 1.2rem;
+  }
+
+  .navbar-links {
+    order: 1;
   }
 
   .featured-banner {
-    margin-top: 7rem;
+    margin-top: 12rem;
   }
 
   .overlay-text {
