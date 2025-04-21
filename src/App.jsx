@@ -84,11 +84,31 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
           height="500" 
           src="https://www.youtube.com/embed/your-video-id" 
           title="Summit Lodge Big Bear"
-          frameBorder="0" 
+          style={{ border: 'none' }}
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
         ></iframe>
       </div>
+
+      {/* Cloudflare Video */}
+      {/* <div className="video-container">
+        <div style={{ position: 'relative', paddingTop: '56.25%' }}>
+          <iframe
+            src={`https://${import.meta.env.VITE_CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN}/${import.meta.env.VITE_CLOUDFLARE_STREAM_VIDEO_ID}/iframe?poster=https%3A%2F%2Fcustomer-ks31pp1mveyl3tf8.cloudflarestream.com%2F1ede0f8e0a4653050de8f465214fced1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600`}
+            loading="lazy"
+            style={{
+              border: 'none', 
+              position: 'absolute', 
+              top: '0', 
+              left: '0', 
+              height: '100%', 
+              width: '100%'
+            }}
+            allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
+            allowFullScreen={true}
+          ></iframe>
+        </div>
+      </div> */}
       
       {/* Image Gallery */}
       <div className="gallery-container">

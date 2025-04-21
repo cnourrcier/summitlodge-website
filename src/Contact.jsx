@@ -1,11 +1,15 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 import './Contact.css';
+
+const website = window.location.hostname;
 
 function Contact() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    website,
   });
   
   const [formStatus, setFormStatus] = useState({
@@ -21,7 +25,7 @@ function Contact() {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     
     // Form validation
@@ -43,29 +47,38 @@ function Contact() {
       return;
     }
     
-    // Handle the form submission to a backend (todo)
-    // Temporary: simulate successful submission
-    console.log('Form submitted:', formData);
-    
-    // Reset form and show success message
-    setFormData({
-      name: '',
-      email: '',
-      message: ''
-    });
-    
-    setFormStatus({
-      submitted: true,
-      error: null
-    });
-    
-    // Reset success message after 5 seconds
-    setTimeout(() => {
+    try {
+      // Send email via backend
+      const response = await axios.post(`${import.meta.env.VITE_API_BASE_URL}/api/send-email`, formData);
+      console.log('Form submitted:', response.data);
+
+      // Reset form and show success message
+      setFormData({
+        name: '',
+        email: '',
+        message: '',
+        website,
+      });
+      
       setFormStatus({
-        submitted: false,
+        submitted: true,
         error: null
       });
-    }, 5000);
+      
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setFormStatus({
+          submitted: false,
+          error: null
+        });
+      }, 5000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      setFormStatus({
+        submitted: false,
+        error: 'Failed to send your message. Please try again.'
+      });
+    }
   };
 
   return (
