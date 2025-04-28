@@ -38,48 +38,6 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
         </div>
       </div>
       
-      {/* Social Links Row */}
-      {/* <div className="social-row">
-        <div className="social-links">
-          <a 
-            href="https://facebook.com/SummitLodgeBigBear"
-            className="social-link"
-            target='_blank'
-            rel="noreferrer"
-          >
-            <i className="fab fa-facebook-f"></i>
-          </a>
-          <a 
-            href="https://www.instagram.com/summitlodgebigbear?igsh=ZjIwdmFjNmZ0YTVk" 
-            className="social-link"
-            target='_blank'
-            rel="noreferrer"
-          >
-            <i className="fab fa-instagram"></i>
-          </a>
-          <a 
-            href="https://youtube.com" 
-            className="social-link"
-            target='_blank'
-            rel="noreferrer"
-          >
-            <i className="fab fa-youtube"></i>
-          </a>
-        </div>
-        <a 
-          href='https://bearadise.com/property/summit-lodge'
-          className="book-btn"
-          target='_blank'
-          rel="noreferrer"
-        >
-          Book it!
-        </a>
-        <div className="address">
-          Summit Lodge – Big Bear<br />
-          42243 Evergreen Dr, Big Bear Lake, CA 92315
-        </div>
-      </div> */}
-      
       {/* YouTube Video */}
       {/* <div className="video-container">
         <iframe 
