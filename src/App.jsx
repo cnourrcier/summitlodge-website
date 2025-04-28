@@ -3,12 +3,15 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import staycation from './assets/staycation.png';
 import About from './About';
 import Contact from './Contact';
+import ScrollToTop from './components/ScrollToTop';
 import './App.css';
 
 // Home 
 function Home({ currentSlide, sliderImages, galleryImages }) {
+
   return (
     <>
+      <ScrollToTop />
       {/* Featured Banner */}
       <div className="featured-banner">
           Featured on Staycation TV
@@ -227,7 +230,7 @@ function App() {
         <nav className="navbar">
           <div className="navbar-content">
           <div className="navbar-left">
-            <Link to="/" className="navbar-brand">Summit Lodge Big Bear</Link>
+            <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
             <div className="navbar-info">
               <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
               <p>Close to Summit Mountain Resort</p>
@@ -271,8 +274,8 @@ function App() {
               </a>
             </div>
             <div className="navbar-links">
-              <Link to="/about">About</Link>
-              <Link to="/contact">Contact</Link>
+              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
+              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
             </div>
           </div>
         </nav>
@@ -319,7 +322,7 @@ function App() {
                 </a>
               </div>
               <div className="footer-buttons">
-                <Link to="/contact" className="footer-btn">Contact Us</Link>
+                <Link to="/contact" className="footer-btn" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
                 <a 
                   href='https://bearadise.com/property/summit-lodge'
                   className="footer-btn book-btn"

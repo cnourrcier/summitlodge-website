@@ -166,10 +166,6 @@
     color: #e5743b;
     font-weight: bold;
   }
-  
-  .location-image {
-    background-image: url('/api/placeholder/600/400');
-  }
 
   /* Map Section */
   .map-section {
