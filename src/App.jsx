@@ -97,8 +97,6 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
       <div className="video-container">
         <div style={{ position: 'relative', paddingTop: '56.25%' }}>
           <iframe
-            width="100%"
-            height="500"
             src={`https://${import.meta.env.VITE_CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN}/${import.meta.env.VITE_CLOUDFLARE_STREAM_VIDEO_ID}/iframe`}
             title="Summit Lodge Big Bear on Staycation TV"
             loading="lazy"
@@ -108,7 +106,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
               top: '0', 
               left: '0',
               height: '100%', 
-              width: '100%'
+              width: '100%',
             }}
             allow="accelerometer; gyroscope; autoplay; encrypted-media; picture-in-picture;"
             allowFullScreen={true}
