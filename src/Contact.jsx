@@ -1,10 +1,15 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import './Contact.css';
 
 const website = window.location.hostname;
 
 function Contact() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',

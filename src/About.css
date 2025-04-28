@@ -6,7 +6,7 @@
     color: white;
     text-align: center;
     padding: 80px 20px;
-    margin-top: 5rem;
+    margin-top: 8.5rem;
     position: relative;
   }
   
@@ -17,7 +17,7 @@
   
   .about-hero h1 {
     font-size: 3.5rem;
-    margin-bottom: 1rem;
+    /* margin-bottom: 1rem; */
     font-family: 'Playfair Display', serif;
   }
   
@@ -25,6 +25,13 @@
     font-size: 1.5rem;
     font-style: italic;
     font-family: 'Raleway', sans-serif;
+  }
+
+  .about-hero .lodge-tagline {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    font-style: normal;
   }
   
   /* Section Styles */
@@ -234,7 +241,7 @@
   
   @media (max-width: 768px) {
     .about-hero {
-      margin-top: 12rem;
+      margin-top: 15.5rem;
     }
     .about-hero h1 {
       font-size: 2.5rem;

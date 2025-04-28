@@ -53,11 +53,24 @@ button {
   padding: 0.5rem 1rem;
 }
 
+.navbar-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
 .navbar-brand {
   font-family: 'Playfair Display', serif;
   font-size: 1.8rem;
   font-weight: 700;
   color: #3c5e47;
+}
+
+.navbar-info {
+  font-size: 0.85rem;
+  line-height: 1.3;
+  margin-top: 0.25rem;
+  color: #555;
 }
 
 .navbar-actions {
@@ -121,7 +134,7 @@ button {
   font-style: italic;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Added shadow for depth */
   position: relative;
-  margin-top: 5rem;
+  margin-top: 8.5rem;
 }
 
 /* Slider Styles */
@@ -192,31 +205,6 @@ button {
   line-height: 1.2;
 }
 
-/* Social Row Styles */
-.social-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 2rem auto;
-  padding: 65px 1rem 0 1rem;
-}
-
-.social-links {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.social-link {
-  font-size: 1.8rem;
-  color: #3c5e47;
-  transition: color 0.3s ease;
-}
-
-.social-link:hover {
-  color: #274032;
-}
-
 .book-btn {
   background-color: #e5743b;
   color: white;
@@ -240,7 +228,7 @@ button {
 /* Video Container Styles */
 .video-container {
   max-width: 1200px;
-  margin: 3rem auto;
+  margin: 7rem auto 3rem auto;
   padding: 0 1rem;
 }
 
@@ -368,12 +356,22 @@ button {
   color: rgba(255, 255, 255, 0.7);
 }
 
+.footer-credit {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.6);
+}
+
 /* Responsive Styles */
 @media (max-width: 768px) {
   .navbar-content {
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
+  }
+
+  .navbar-info {
+    text-align: center;
   }
 
   .navbar-actions {
@@ -391,17 +389,12 @@ button {
   }
 
   .featured-banner {
-    margin-top: 12rem;
+    margin-top: 15.5rem;
   }
 
   .overlay-text {
     padding: 0.75rem 1.5rem;
     margin-bottom: 1.5rem;
-  }
-  
-  .social-row {
-    flex-direction: column;
-    gap: 1.5rem;
   }
   
   .address {

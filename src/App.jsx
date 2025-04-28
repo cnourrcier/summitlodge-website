@@ -36,7 +36,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
       </div>
       
       {/* Social Links Row */}
-      <div className="social-row">
+      {/* <div className="social-row">
         <div className="social-links">
           <a 
             href="https://facebook.com/SummitLodgeBigBear"
@@ -75,7 +75,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
           Summit Lodge – Big Bear<br />
           42243 Evergreen Dr, Big Bear Lake, CA 92315
         </div>
-      </div>
+      </div> */}
       
       {/* YouTube Video */}
       <div className="video-container">
@@ -226,7 +226,14 @@ function App() {
         {/* Navigation Bar */}
         <nav className="navbar">
           <div className="navbar-content">
+          <div className="navbar-left">
             <Link to="/" className="navbar-brand">Summit Lodge Big Bear</Link>
+            <div className="navbar-info">
+              <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
+              <p>Close to Summit Mountain Resort</p>
+              <p>Sleeps 16, 4 bedrooms, 3 bathrooms, 3287 sq-ft</p>
+            </div>
+          </div>
             <div className="navbar-actions">
               <div className="navbar-social-links">
                 <a 
@@ -329,6 +336,7 @@ function App() {
             </div>
             <div className="footer-copyright">
               &copy; {new Date().getFullYear()} Summit Lodge Big Bear
+              <div className="footer-credit">Website by DevRise Studio</div>
             </div>
           </div>
         </footer>
