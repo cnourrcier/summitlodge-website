@@ -81,7 +81,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
       </div> */}
       
       {/* YouTube Video */}
-      <div className="video-container">
+      {/* <div className="video-container">
         <iframe 
           width="100%" 
           height="500" 
@@ -91,19 +91,22 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowFullScreen
         ></iframe>
-      </div>
+      </div> */}
 
       {/* Cloudflare Video */}
-      {/* <div className="video-container">
+      <div className="video-container">
         <div style={{ position: 'relative', paddingTop: '56.25%' }}>
           <iframe
-            src={`https://${import.meta.env.VITE_CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN}/${import.meta.env.VITE_CLOUDFLARE_STREAM_VIDEO_ID}/iframe?poster=https%3A%2F%2Fcustomer-ks31pp1mveyl3tf8.cloudflarestream.com%2F1ede0f8e0a4653050de8f465214fced1%2Fthumbnails%2Fthumbnail.jpg%3Ftime%3D%26height%3D600`}
+            width="100%"
+            height="500"
+            src={`https://${import.meta.env.VITE_CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN}/${import.meta.env.VITE_CLOUDFLARE_STREAM_VIDEO_ID}/iframe`}
+            title="Summit Lodge Big Bear on Staycation TV"
             loading="lazy"
             style={{
               border: 'none', 
               position: 'absolute', 
               top: '0', 
-              left: '0', 
+              left: '0',
               height: '100%', 
               width: '100%'
             }}
@@ -111,7 +114,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
             allowFullScreen={true}
           ></iframe>
         </div>
-      </div> */}
+      </div>
       
       {/* Image Gallery */}
       <div className="gallery-container">
