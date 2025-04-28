@@ -4,7 +4,9 @@ import staycation from './assets/staycation.png';
 import About from './About';
 import Contact from './Contact';
 import ScrollToTop from './components/ScrollToTop';
+import ViewportDimensions from "./utils/ViewportDimensions";
 import './App.css';
+import Analytics from './utils/Analytics';
 
 // Home 
 function Home({ currentSlide, sliderImages, galleryImages }) {
@@ -184,6 +186,7 @@ function App() {
 
   return (
     <Router>
+      <Analytics />
       <div className="app">
         {/* Navigation Bar */}
         <nav className="navbar">
@@ -244,6 +247,8 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
         </Routes>
+
+        {import.meta.env.VITE_ENV === 'development' && <ViewportDimensions />}
         
         {/* Footer */}
         <footer className="footer">
