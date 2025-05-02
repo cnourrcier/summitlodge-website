@@ -193,7 +193,9 @@ function App() {
           <div className="navbar-content">
           <div className="navbar-left">
             <div className="navbar-logo">
-              <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
+              <Link to="/">
+                <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
+              </Link>
             </div>
             <div className='navbar-text'>
               <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
