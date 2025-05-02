@@ -192,11 +192,16 @@ function App() {
         <nav className="navbar">
           <div className="navbar-content">
           <div className="navbar-left">
-            <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
-            <div className="navbar-info">
-              <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
-              <p>Close to Summit Mountain Resort</p>
-              <p>Sleeps 16, 4 bedrooms, 3 bathrooms, 3287 sq-ft</p>
+            <div className="navbar-logo">
+              <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
+            </div>
+            <div className='navbar-text'>
+              <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
+              <div className="navbar-info">
+                <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
+                <p>Close to Summit Mountain Resort</p>
+                <p>Sleeps 16, 4 bedrooms, 3 bathrooms, 3287 sq-ft</p>
+              </div>
             </div>
           </div>
             <div className="navbar-actions">
