@@ -398,6 +398,11 @@ button {
   .navbar-left {
     flex-direction: column;
     align-items: center;
+    gap: 1rem;
+  }
+
+  .logo-image {
+    max-height: 120px;
   }
 
   .navbar-info {
@@ -418,7 +423,7 @@ button {
   }
 
   .featured-banner {
-    margin-top: 27rem;
+    margin-top: 28rem;
     line-height: 3.5rem;
     font-size: 2.5rem;
   }
