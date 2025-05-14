@@ -188,14 +188,14 @@ function Contact() {
                     >
                       <i className="fab fa-instagram"></i>
                     </a>
-                    <a 
+                    {/* <a 
                       href="https://youtube.com" 
                       className="social-icon"
                       target="_blank"
                       rel="noreferrer"
                     >
                       <i className="fab fa-youtube"></i>
-                    </a>
+                    </a> */}
                   </div>
                 </div>
               </div>

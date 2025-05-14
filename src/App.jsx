@@ -77,8 +77,8 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
       {/* Image Gallery */}
       <div className="gallery-container">
         <div className="gallery">
-          {galleryImages.map((image) => (
-            <div key={image.id} className="gallery-item">
+          {galleryImages.map((image, index) => (
+            <div key={index} className="gallery-item">
               <img src={`${import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}/${image.imageID}/public`} alt={image.alt} />
             </div>
           ))}
@@ -173,6 +173,24 @@ function App() {
       name: 'Work from home at Summit Lodge Big Bear small.jpg', 
       alt: 'Work from home at Summit Lodge Big Bear',
     },
+    { 
+      id: 13,
+      imageID: 'd21b1fc3-2e5c-40f5-8bab-a8c8886c9b00',
+      name: '00220 small.jpg', 
+      alt: 'Serene view from the patio',
+    },
+    { 
+      id: 14,
+      imageID: 'd2e2bf8b-2582-4ed2-3cb9-69016054ed00',
+      name: 'IMG_0174 small.jpg', 
+      alt: 'Snow covered patio chairs',
+    },
+    { 
+      id: 15,
+      imageID: '92057105-fec4-4263-3b37-63ea5eaef300',
+      name: 'IMG_6162 small.jpg', 
+      alt: 'Winter view from the patio',
+    },
   ];
   
   // Auto-slide functionality
@@ -224,14 +242,14 @@ function App() {
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a 
+                {/* <a 
                   href="https://youtube.com" 
                   className="navbar-social-link"
                   target='_blank'
                   rel="noreferrer"
                 >
                   <i className="fab fa-youtube"></i>
-                </a>
+                </a> */}
               </div>
               <a 
                 href='https://bearadise.com/property/summit-lodge'
@@ -283,14 +301,14 @@ function App() {
                 >
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a 
+                {/* <a 
                   href="https://youtube.com" 
                   className="footer-social-link"
                   target='_blank'
                   rel="noreferrer"
                 >
                   <i className="fab fa-youtube"></i>
-                </a>
+                </a> */}
               </div>
               <div className="footer-buttons">
                 <Link to="/contact" className="footer-btn" onClick={() => window.scrollTo(0, 0)}>Contact Us</Link>
