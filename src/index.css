@@ -1,4 +1,8 @@
 /* index.css - Global styles */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;600&display=swap');
+
 :root {
   --primary-color: #3c5e47;
   --secondary-color: #e5743b;
@@ -28,4 +32,19 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
 }
