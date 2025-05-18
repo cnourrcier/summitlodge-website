@@ -92,6 +92,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [dropdownMenuOpen, setDropdownMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   
   // Images for the slider
   const sliderImages = [
@@ -218,6 +219,24 @@ function App() {
     dropdownMenuOpen === false ? setDropdownMenuOpen(true) : setDropdownMenuOpen(false);
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth <= 768) {
+        const scrollTop = window.scrollY;
+        if (scrollTop > 130) {
+          setIsScrolled(true);
+        } else {
+          setIsScrolled(false);
+        }
+      } else {
+        setIsScrolled(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <Router>
       <Analytics />
@@ -226,7 +245,7 @@ function App() {
         <nav className="navbar">
           <div className="navbar-content">
             <div className="navbar-left">
-              <div className="navbar-logo">
+              <div className={`navbar-logo ${isScrolled && 'hidden'}`}>
                 <Link to="/">
                   <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
                 </Link>
