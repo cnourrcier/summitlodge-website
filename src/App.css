@@ -416,7 +416,7 @@ button {
     height: auto;
     padding: 1.5rem;
     gap: 1rem;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: rgba(255, 255, 255);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
     opacity: 0;
     visibility: hidden;
@@ -484,7 +484,7 @@ button {
   }
 
   .featured-banner {
-    margin-top: 21.5rem;
+    margin-top: 21.3rem;
     line-height: 3.5rem;
     font-size: 2.5rem;
   }
