@@ -1,4 +1,4 @@
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from '../components/common/ScrollToTop';
 import './About.css';
 
 const imageIDs = [

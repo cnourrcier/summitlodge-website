@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import ScrollToTop from './components/ScrollToTop';
+import ScrollToTop from '../components/common/ScrollToTop';
 import './Contact.css';
 
 const website = window.location.hostname;
