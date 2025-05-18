@@ -123,6 +123,10 @@ button {
   background-color: #d5642b;
 }
 
+.navbar-dropdown-links {
+  display: none;
+}
+
 .navbar-links {
   display: flex;
   gap: 1.5rem;
@@ -383,7 +387,6 @@ button {
 /* Responsive Styles */
 @media (max-width: 900px) {
   .navbar-actions {
-      flex-direction: column;
       gap: 0.5rem;
   }
 } 
@@ -398,7 +401,7 @@ button {
   .navbar-left {
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
   }
 
   .logo-image {
@@ -411,19 +414,66 @@ button {
 
   .navbar-actions {
     gap: 1.5rem;
-    order: 2;
   }
 
   .navbar-social-links {
     gap: 1.2rem;
   }
 
+  .navbar-dropdown-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: .46rem;
+    cursor: pointer;
+  }
+
+  .navbar-dropdown-icon:hover .line {
+    background-color: #274032;
+  }
+
+  .line {
+    width: 30px;
+    height: 2.5px;
+    background-color: #3c5e47;
+  }
+
+  .navbar-dropdown-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 2rem;
+    left: -1.5rem;
+    width: auto;
+    height: auto;
+    padding: 1.5rem;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255);
+  }
+
+  .navbar-dropdown-links a {
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    color: #3c5e47;
+  }
+
+  .navbar-dropdown-links a:hover {
+    color: #274032;
+  }
+
+  .hidden {
+    display: none;
+  }
+
   .navbar-links {
-    order: 1;
+    display: none;
   }
 
   .featured-banner {
-    margin-top: 28rem;
+    margin-top: 21.5rem;
     line-height: 3.5rem;
     font-size: 2.5rem;
   }

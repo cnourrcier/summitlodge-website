@@ -91,6 +91,7 @@ function Home({ currentSlide, sliderImages, galleryImages }) {
 // App
 function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [dropdownMenuOpen, setDropdownMenuOpen] = useState(false);
   
   // Images for the slider
   const sliderImages = [
@@ -202,6 +203,16 @@ function App() {
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
+  // useEffect(() => {
+  //   if (window.innerWidth > 768 && dropdownMenuOpen === true) {
+  //     setDropdownMenuOpen(false);
+  //   }
+  // }, [dropdownMenuOpen]);
+
+  const handleDropdownMenu = () => {
+    dropdownMenuOpen === false ? setDropdownMenuOpen(true) : setDropdownMenuOpen(false);
+  }
+
   return (
     <Router>
       <Analytics />
@@ -209,21 +220,21 @@ function App() {
         {/* Navigation Bar */}
         <nav className="navbar">
           <div className="navbar-content">
-          <div className="navbar-left">
-            <div className="navbar-logo">
-              <Link to="/">
-                <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
-              </Link>
-            </div>
-            <div className='navbar-text'>
-              <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
-              <div className="navbar-info">
-                <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
-                <p>Close to Summit Mountain Resort</p>
-                <p>Sleeps 16, 4 bedrooms, 3 bathrooms, 3287 sq-ft</p>
+            <div className="navbar-left">
+              <div className="navbar-logo">
+                <Link to="/">
+                  <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
+                </Link>
+              </div>
+              <div className='navbar-text'>
+                <Link to="/" className="navbar-brand" onClick={() => window.scrollTo(0, 0)}>Summit Lodge Big Bear</Link>
+                <div className="navbar-info">
+                  <p>Luxury Vacation Rental - Secluded - Celebrity Home</p>
+                  <p>Close to Summit Mountain Resort</p>
+                  <p>Sleeps 16, 4 bedrooms, 3 bathrooms, 3287 sq-ft</p>
+                </div>
               </div>
             </div>
-          </div>
             <div className="navbar-actions">
               <div className="navbar-social-links">
                 <a 
@@ -259,8 +270,20 @@ function App() {
               >
                 Book it!
               </a>
+              <div 
+                className='navbar-dropdown-icon'
+                onClick={handleDropdownMenu}
+              >
+                <div className='line'></div>
+                <div className='line'></div>
+                <div className='line'></div>
+                <div className={`navbar-dropdown-links ${!dropdownMenuOpen ? 'hidden' : ''}`}>
+                  <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
+                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+                </div>
+              </div>
             </div>
-            <div className="navbar-links">
+            <div className='navbar-links'>
               <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
               <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
             </div>
