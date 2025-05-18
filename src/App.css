@@ -59,13 +59,13 @@ button {
   gap: 1.5rem;
 }
 
+.navbar-left.hidden {
+  display: none;
+}
+
 .navbar-logo {
   display: flex;
   align-items: center;
-}
-
-.navbar-logo.hidden {
-  display: none;
 }
 
 .logo-image {

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import staycation from './assets/staycation.png';
 import About from './About';
@@ -244,8 +244,8 @@ function App() {
         {/* Navigation Bar */}
         <nav className="navbar">
           <div className="navbar-content">
-            <div className="navbar-left">
-              <div className={`navbar-logo ${isScrolled && 'hidden'}`}>
+            <div className={`navbar-left ${isScrolled && 'hidden'}`}>
+              <div className="navbar-logo">
                 <Link to="/">
                   <img src="/SummitLodgeLogo.jpg" alt="Summit Lodge Logo" className="logo-image" />
                 </Link>
