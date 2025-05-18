@@ -385,11 +385,70 @@ button {
 }
 
 /* Responsive Styles */
-@media (max-width: 900px) {
-  .navbar-actions {
-      gap: 0.5rem;
+@media (max-width: 1075px) {
+  .navbar-dropdown-icon {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: .46rem;
+    cursor: pointer;
   }
-} 
+
+  .navbar-dropdown-icon:hover .line {
+    background-color: #274032;
+  }
+
+  .line {
+    width: 30px;
+    height: 2.5px;
+    background-color: #3c5e47;
+  }
+
+  .navbar-dropdown-links {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    top: 5rem;
+    right: 0;
+    width: 220px;
+    height: auto;
+    padding: 1.5rem;
+    gap: 1rem;
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    z-index: 1500;
+  }
+
+  .visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .navbar-dropdown-links a {
+    font-size: 1.05rem;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    color: #3c5e47;
+  }
+
+  .navbar-dropdown-links a:hover {
+    color: #274032;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .navbar-links {
+    display: none;
+  }
+
+}
 
 @media (max-width: 768px) {
   .navbar-content {
@@ -420,56 +479,8 @@ button {
     gap: 1.2rem;
   }
 
-  .navbar-dropdown-icon {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    gap: .46rem;
-    cursor: pointer;
-  }
-
-  .navbar-dropdown-icon:hover .line {
-    background-color: #274032;
-  }
-
-  .line {
-    width: 30px;
-    height: 2.5px;
-    background-color: #3c5e47;
-  }
-
   .navbar-dropdown-links {
-    position: absolute;
-    display: flex;
-    flex-direction: column;
-    top: 2rem;
-    left: -1.5rem;
-    width: auto;
-    height: auto;
-    padding: 1.5rem;
-    gap: 1rem;
-    background-color: rgba(255, 255, 255);
-  }
-
-  .navbar-dropdown-links a {
-    font-size: 1.05rem;
-    font-weight: 600;
-    transition: color 0.3s ease;
-    color: #3c5e47;
-  }
-
-  .navbar-dropdown-links a:hover {
-    color: #274032;
-  }
-
-  .hidden {
-    display: none;
-  }
-
-  .navbar-links {
-    display: none;
+    top: 3.5rem;
   }
 
   .featured-banner {

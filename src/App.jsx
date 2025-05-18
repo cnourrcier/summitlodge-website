@@ -203,11 +203,16 @@ function App() {
     return () => clearInterval(interval);
   }, [sliderImages.length]);
 
-  // useEffect(() => {
-  //   if (window.innerWidth > 768 && dropdownMenuOpen === true) {
-  //     setDropdownMenuOpen(false);
-  //   }
-  // }, [dropdownMenuOpen]);
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 1075 && dropdownMenuOpen === true) {
+        setDropdownMenuOpen(false);
+      }
+    }
+    window.addEventListener('resize', handleResize);
+    handleResize();
+    return () => window.removeEventListener('resize', handleResize);
+  }, [dropdownMenuOpen]);
 
   const handleDropdownMenu = () => {
     dropdownMenuOpen === false ? setDropdownMenuOpen(true) : setDropdownMenuOpen(false);
@@ -277,15 +282,29 @@ function App() {
                 <div className='line'></div>
                 <div className='line'></div>
                 <div className='line'></div>
-                <div className={`navbar-dropdown-links ${!dropdownMenuOpen ? 'hidden' : ''}`}>
+                <div className={`navbar-dropdown-links ${dropdownMenuOpen ? 'visible' : ''}`}>
                   <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
                   <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+                  <a 
+                    href='https://www.bigbear.com/dining-nightlife/'
+                    target='_blank'
+                    rel='noreferrer'
+                  >
+                    Local Dining & Nightlife
+                  </a>
                 </div>
               </div>
-            </div>
-            <div className='navbar-links'>
-              <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
-              <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+              <div className='navbar-links'>
+                <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
+                <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
+                <a 
+                  href='https://www.bigbear.com/dining-nightlife/'
+                  target='_blank'
+                  rel='noreferrer'
+                >
+                  Local Dining & Nightlife
+                </a>
+              </div>
             </div>
           </div>
         </nav>
