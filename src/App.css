@@ -93,6 +93,10 @@ button {
   color: #555;
 }
 
+.navbar-info.hidden {
+  display: none;
+}
+
 .navbar-actions {
   display: flex;
   align-items: center;

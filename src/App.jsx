@@ -302,6 +302,7 @@ function App() {
                 <div className='line'></div>
                 <div className='line'></div>
                 <div className={`navbar-dropdown-links ${dropdownMenuOpen ? 'visible' : ''}`}>
+                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                   <Link to="/about" onClick={() => window.scrollTo(0, 0)}>About</Link>
                   <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
                   <a 
