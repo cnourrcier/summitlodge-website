@@ -115,3 +115,30 @@
     },
   ];
   
+  // Images for about page
+  export const aboutImages = [
+  {
+    id: 1,
+    imageId: "2b0e981b-eeb1-409f-03a5-2c504db1fe00",
+    fileName: "",
+    alt: "Summit Lodge gross internal area floorplan",
+  },
+  {
+    id: 2,
+    imageId: "076410bc-8c7f-49d1-8c02-984999291d00",
+    fileName: "",
+    alt: "",
+  },
+  {
+    id: 3,
+    imageId: "34cb4192-d9be-4d60-d6a1-21b2ec988400",
+    fileName: "",
+    alt: "",
+  },
+  {
+    id: 4,
+    imageId: "c524ad3a-be6a-43d5-73c9-a7c976a63800",
+    fileName: "",
+    alt: "",
+  },
+]; 

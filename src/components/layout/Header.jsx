@@ -1,27 +1,14 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useScrollPosition from "../../hooks/useScrollPosition";
 
 const Header = () => {
     const [dropdownMenuOpen, setDropdownMenuOpen] = useState(false);
-    const [isScrolled, setIsScrolled] = useState(false);
-
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.innerWidth <= 768) {
-                const scrollTop = window.scrollY;
-                if (scrollTop > 130) {
-                setIsScrolled(true);
-                } else {
-                setIsScrolled(false);
-                }
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-            window.addEventListener('scroll', handleScroll);
-            return () => window.removeEventListener('scroll', handleScroll);
-    }, []);
+    const { isScrolled } = useScrollPosition({
+      threshold: 130,
+      mobileOnly: true,
+      mobileBreakpoint: 768
+    });
 
     useEffect(() => {
         const handleResize = () => {

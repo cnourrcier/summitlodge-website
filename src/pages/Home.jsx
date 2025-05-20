@@ -35,14 +35,12 @@ const Home = () => {
         ]}
       />
 
-      {/* Cloudflare Video */}
       <VideoPlayer 
         videoId={import.meta.env.VITE_CLOUDFLARE_STREAM_VIDEO_ID}
         customerSubdomain={import.meta.env.VITE_CLOUDFLARE_STREAM_CUSTOMER_SUBDOMAIN}
         title={"Summit Lodge Big Bear on Staycation TV"}
       />
       
-      {/* Image Gallery */}
       <Gallery 
         images={galleryImages}
         imageBaseUrl={import.meta.env.VITE_CLOUDFLARE_IMAGE_URL}

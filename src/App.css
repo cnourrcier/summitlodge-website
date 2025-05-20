@@ -202,26 +202,6 @@
   line-height: 1.2;
 }
 
-.book-btn {
-  background-color: #e5743b;
-  color: white;
-  font-weight: 600;
-  padding: 1rem 1.8rem;
-  font-size: 1.1rem;
-  transition: background-color 0.3s ease;
-}
-
-.book-btn:hover {
-  background-color: #d5642b;
-}
-
-.address {
-  text-align: right;
-  font-size: 1.05rem;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
 /* Video Container Styles */
 .video-container {
   max-width: 1200px;
@@ -255,110 +235,6 @@
   height: 250px;
   object-fit: cover;
   display: block;
-}
-
-/* Footer Styles */
-.footer {
-  background-color: #1a2c1f; /* Darker green */
-  color: white;
-  padding: 3rem 0 1.5rem;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.footer-left {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.footer-logo {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-staycation {
-  max-width: 100%;
-  height: auto;
-  background-color: white;
-  padding: 10px;
-}
-
-.footer-right {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.footer-social {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.footer-social-link {
-  font-size: 2rem;
-  color: white;
-  transition: color 0.3s ease;
-}
-
-.footer-social-link:hover {
-  color: #e5743b;
-}
-
-.footer-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.footer-btn {
-  background-color: transparent;
-  color: white;
-  border: 1px solid white;
-  padding: 1rem 1.8rem;
-  font-size: 1.1rem;
-  transition: all 0.3s ease;
-}
-
-.footer-btn:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-}
-
-.footer-btn.book-btn {
-  background-color: #e5743b;
-  border: 1px solid #e5743b;
-}
-
-.footer-btn.book-btn:hover {
-  background-color: #d5642b;
-  border: 1px solid #d5642b;
-}
-
-.footer-address {
-  font-size: 1.05rem;
-  line-height: 1.5;
-  font-weight: 500;
-}
-
-.footer-copyright {
-  grid-column: 1 / -1;
-  text-align: center;
-  margin-top: 2rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
-}
-
-.footer-credit {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive Styles */
@@ -482,20 +358,6 @@
   
   .gallery {
     grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .footer-left, .footer-right {
-    align-items: center;
-    text-align: center;
-  }
-  
-  .footer-buttons {
-    justify-content: center;
   }
 }
 
