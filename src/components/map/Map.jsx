@@ -1,23 +1,35 @@
 import PropTypes from 'prop-types';
+import AttractionsList from './AttractionsList';
+import './Map.css';
 
-// This is an abstract component that defines the interface for map implementations
+// This component defines the interface for map implementations
 const Map = ({ 
   mapImplementation: MapImplementation,
   address,
   longitude,
   latitude,
   zoom,
+  showAttractions = true,
   ...props
 }) => {
   return (
     <div className="map-wrapper">
-      <MapImplementation
-        address={address}
-        longitude={longitude}
-        latitude={latitude}
-        zoom={zoom}
-        {...props}
-      />
+      <div className="map-content-wrapper">
+        <div className="map-container">
+          <MapImplementation
+            address={address}
+            longitude={longitude}
+            latitude={latitude}
+            zoom={zoom}
+            {...props}
+          />
+        </div>
+        {showAttractions && (
+          <div className="attractions-container">
+            <AttractionsList />
+          </div>
+        )}
+      </div>
       <div className="map-address">
         <p className="map-address-p">{address}</p>
         <a 
@@ -38,7 +50,8 @@ Map.propTypes = {
   address: PropTypes.string.isRequired,
   longitude: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   latitude: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
-  zoom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired
+  zoom: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  showAttractions: PropTypes.bool
 };
 
 export default Map;

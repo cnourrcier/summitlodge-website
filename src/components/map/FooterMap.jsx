@@ -36,7 +36,7 @@ const FooterMap = ({
       <Modal 
         isOpen={showModal} 
         onClose={() => setShowModal(false)}
-        title="Location"
+        title="Summit Lodge Big Bear"
         size="large"
       >
         <MapModalContent 

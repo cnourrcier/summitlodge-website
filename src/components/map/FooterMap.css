@@ -8,7 +8,6 @@
     border: 2px solid rgba(255,255,255,0.3);
     overflow: hidden;
     width: 100%;
-    /* max-width: 500px; */
     aspect-ratio: 3/2;
     transition: all 0.3s ease;
 }
@@ -22,7 +21,6 @@
 .view-map-btn {
     margin-top: 0.75rem;
     width: 100%;
-    /* max-width: 500px; */
     background-color: transparent;
     color: white;
     border: 1px solid white;

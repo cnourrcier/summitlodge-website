@@ -1,0 +1,59 @@
+.attractions-list {
+  padding: 1.5rem;
+  background: #f9f9f9;
+  border-radius: 4px;
+  height: 100%;
+}
+
+.attractions-list h3 {
+  font-size: 1.1rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.attractions-list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.attractions-list li {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 0.75rem;
+  font-size: 0.9rem;
+}
+
+.attraction-icon {
+  color: #e5743b;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+}
+
+.attraction-details {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.attraction-name {
+  font-weight: 500;
+}
+
+.attraction-distance {
+  color: #666;
+  margin-left: 0.5rem;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .map-content-wrapper {
+    flex-direction: column;
+  }
+  
+  .attractions-list {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}

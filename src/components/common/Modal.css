@@ -14,7 +14,7 @@
 .modal-content {
   background-color: white;
   border-radius: 6px;
-  overflow: hidden;
+  overflow: scroll;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
   color: #333;
   width: 90%;
