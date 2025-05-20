@@ -124,6 +124,7 @@ function Contact() {
                         value={formData.name}
                         onChange={handleChange}
                         placeholder="John Doe"
+                        required
                       />
                     </div>
                     
@@ -136,6 +137,7 @@ function Contact() {
                         value={formData.email}
                         onChange={handleChange}
                         placeholder="john@example.com"
+                        required
                       />
                     </div>
                     
@@ -148,7 +150,8 @@ function Contact() {
                         onChange={handleChange}
                         placeholder="What would you like to know about Summit Lodge?"
                         rows="6"
-                      ></textarea>
+                        required
+                      />
                     </div>
                     
                     <button type="submit" className="submit-btn">
