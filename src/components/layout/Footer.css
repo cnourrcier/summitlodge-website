@@ -190,7 +190,7 @@
   }
   
   .footer-buttons {
-    flex-direction: column;
+    /* flex-direction: column; */
     width: 100%;
     max-width: 200px;
   }
