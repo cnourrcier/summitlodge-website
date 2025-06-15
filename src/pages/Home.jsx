@@ -4,6 +4,7 @@ import { sliderImages, galleryImages } from '../data/images';
 import ImageSlider from '../components/home/ImageSlider';
 import VideoPlayer from '../components/home/VideoPlayer';
 import Gallery from '../components/home/Gallery';
+import FeaturedBanner from '../components/common/FeaturedBanner';
 
 const Home = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -20,10 +21,7 @@ const Home = () => {
   return (
     <>
       <ScrollToTop />
-      {/* Featured Banner */}
-      <div className="featured-banner">
-          Featured on Staycation TV
-      </div>
+      <FeaturedBanner />
       
       <ImageSlider 
         images={sliderImages}

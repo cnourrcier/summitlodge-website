@@ -43,7 +43,7 @@ const Footer = () => {
                     target='_blank'
                     rel="noreferrer"
                   >
-                    Book it!
+                    Check Availability
                   </a>
                 </div>
               </div>

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useScrollPosition from "../../hooks/useScrollPosition";
+import "./Header.css";
 
 const Header = () => {
     const [dropdownMenuOpen, setDropdownMenuOpen] = useState(false);
@@ -76,7 +77,7 @@ const Header = () => {
                 target='_blank'
                 rel="noreferrer"
               >
-                Book it!
+                Check Availability
               </a>
               <div 
                 className='navbar-dropdown-icon'

@@ -168,7 +168,7 @@
   }
   
   .footer-btn {
-    flex: 1;
+    /* flex: 1; */
     text-align: center;
     min-width: 120px;
   }

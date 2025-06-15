@@ -2,6 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import ScrollToTop from '../components/common/ScrollToTop';
 import './Contact.css';
+import FeaturedBanner from '../components/common/FeaturedBanner';
 
 const website = window.location.hostname;
 
@@ -87,10 +88,7 @@ function Contact() {
     <>
       <ScrollToTop />
       <div className="contact-page">
-        {/* Featured Banner - same as on other pages */}
-        <div className="featured-banner">
-          Featured on Staycation TV
-        </div>
+        <FeaturedBanner />
         
         <div className="contact-container">
           <div className="contact-content">
